@@ -1,2 +1,17 @@
 Hey GCp
 Rajesh is here
+
+Step1:Select freestyle
+Step2:Select Source code management and click git
+Step3:Give repo url
+Step4:Select any repo in github and take only https url as ssh will not support in jenkins
+Step5:Its a public repo no need of credentials and select */master in branches to build section.
+If it is private repo need to take token from git hub and add the token in credentials of jenkins.
+To get the token go to developer settings---select Personal access token--Tokens(classic)---Generate new token(Classic) and select repo scope of first box and save.
+Keep save the token to login the same repo
+Step6:Save and buildnow
+Step7:Build will fail as git not install
+Step8:In server install git by using command
+yum install git -y 
+Step9:once again buildnow and it will pass the pipeline this time
+Step10:check logs in pipeline and take path and check in server using cd path.Files can be seen
